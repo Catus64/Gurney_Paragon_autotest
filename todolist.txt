@@ -1,0 +1,5 @@
+load cap with config and adbProp
+
+basic logging
+
+command to see where you're at (adb shell)
