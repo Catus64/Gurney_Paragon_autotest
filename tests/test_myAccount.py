@@ -7,15 +7,18 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from pages.initial_promo_view import initial_promo_view
 from utils.initial_state_skip import initial_state_skip
+from pages.navbar_view import navbar_view
+from pages.login_page_view import login_page_view
 import time
 import logging
+
 
 logging.basicConfig(level=logging.INFO)
 
 capabilities = dict(
     platformName='Android',
     automationName='uiautomator2',
-    deviceName='Huawei',
+    deviceName='Samsung',
     appPackage='com.convep.gurneyparagon',
     appActivity='com.convep.gurneyparagon.MainActivity',
     language='en',
@@ -36,7 +39,10 @@ class TestAppium(unittest.TestCase):
     def test_login(self) -> None:
 
         initial_state_skip(self.driver,"android")
-        #time.sleep(5)
+        nav = navbar_view(self.driver,"android")
+        nav.navigate("myAccount")
+        loginPage = login_page_view(self.driver,"android")
+        time.sleep(5)
 
 if __name__ == '__main__':
     unittest.main()

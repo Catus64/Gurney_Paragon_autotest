@@ -22,6 +22,16 @@ def wait_for_element(driver,time,by,val,required = False) :
         if(required):
             raise Exception(f"Elements cannot be found: {by} {val}")
         return None
+    
+def find_element(driver,byval,val,required = False):
+    try:
+        button = driver.find_element(by=byval,value = val)
+        return button
+    except TimeoutException:
+        if(required):
+            raise Exception(f"Elements cannot be foind: {byval} {val}")
+        return None
+
 
 def wait(length):
     time.sleep(length)

@@ -4,7 +4,6 @@ from pages.promotion_alert_view import promotion_alert_view
 import logging
 
 def initial_state_skip(driver, phone):
-
         page1 = initial_promo_view(driver, phone)
         if(page1.is_loaded):
             page1.skip_promo()     

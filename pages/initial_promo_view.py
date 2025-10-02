@@ -1,13 +1,4 @@
-import unittest
-from appium import webdriver
-from appium.options.android import UiAutomator2Options
 from appium.webdriver.common.appiumby import AppiumBy
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
-import time
-import logging
 from .base_page import base_page
 from utils.helpers import log_info,wait_for_element,wait
 
@@ -55,7 +46,7 @@ class initial_promo_view(base_page):
 
     
     def load_element(self):
-        self.skip_button = wait_for_element(self.driver,2,AppiumBy.ACCESSIBILITY_ID," SKIP ")
+        self.skip_button = wait_for_element(self.driver,4,AppiumBy.ACCESSIBILITY_ID," SKIP ")
         self.yes_button = wait_for_element(self.driver,0,AppiumBy.ACCESSIBILITY_ID," Yes ")
 
         if(self.skip_button == None):
