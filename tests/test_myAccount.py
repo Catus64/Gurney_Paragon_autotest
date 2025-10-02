@@ -20,7 +20,7 @@ capabilities = dict(
     appActivity='com.convep.gurneyparagon.MainActivity',
     language='en',
     locale='US',
-    noReset=True,
+    noReset=False,
 )
 
 appium_server_url = 'http://localhost:4723'
@@ -33,19 +33,9 @@ class TestAppium(unittest.TestCase):
         if self.driver:
             self.driver.quit()
 
-    def test_loging(self) -> None:
+    def test_login(self) -> None:
 
         initial_state_skip(self.driver,"android")
-        #wait = WebDriverWait(self.driver,15)
-        #accept_button = wait.until(
-        #    EC.element_to_be_clickable((AppiumBy.ACCESSIBILITY_ID, " Yes "))
-        #)
-        #accept_button.click()    
-        #time.sleep(5)
-        #el1 = self.driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value=" Yes ")
-        #el1.click()
-        #el2 = self.driver.find_element(by=AppiumBy.ANDROID_UIAUTOMATOR, value="new UiSelector().className(\"android.view.ViewGroup\").instance(19)")
-        #el2.click()
         #time.sleep(5)
 
 if __name__ == '__main__':
