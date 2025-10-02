@@ -6,16 +6,21 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from pages.initial_promo_view import initial_promo_view
+from utils.initial_state_skip import initial_state_skip
 import time
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 capabilities = dict(
     platformName='Android',
     automationName='uiautomator2',
-    deviceName='Redmi 10 5G',
+    deviceName='Huawei',
     appPackage='com.convep.gurneyparagon',
     appActivity='com.convep.gurneyparagon.MainActivity',
     language='en',
-    locale='US'
+    locale='US',
+    noReset=True,
 )
 
 appium_server_url = 'http://localhost:4723'
@@ -30,8 +35,7 @@ class TestAppium(unittest.TestCase):
 
     def test_loging(self) -> None:
 
-        page1 = initial_promo_view(self.driver,"android")
-        page1.skip_promo()
+        initial_state_skip(self.driver,"android")
         #wait = WebDriverWait(self.driver,15)
         #accept_button = wait.until(
         #    EC.element_to_be_clickable((AppiumBy.ACCESSIBILITY_ID, " Yes "))

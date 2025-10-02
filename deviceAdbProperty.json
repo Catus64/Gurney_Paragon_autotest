@@ -6,13 +6,21 @@
     "version":"Android 14"
 },
 {
-    "device" : "Redmi 10 5G",
+    "device" : "Samsung A23",
     "ip" : "",
     "UID" : ""
 },
 {
-    "device" : "Redmi 10 5G",
+    "device" : "Huawei nova 12a",
     "ip" : "",
     "UID" : ""
+},
+{
+  "platformName": "Android",
+  "appium:automationName": "uiautomator2",
+  "appium:deviceName": "Huawei",
+  "appium:appPackage": "com.convep.gurneyparagon",
+  "appium:appActivity": "com.convep.gurneyparagon.MainActivity",
+  "appium:noReset": false
 }
 ]
