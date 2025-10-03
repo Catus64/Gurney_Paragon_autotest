@@ -17,11 +17,15 @@ def locate_login() -> dict:
 def locate_cap() -> dict:
     ret = dict()
     file_path = "capConfig.ini"
-    login_path = os.path.join(parent_dir, file_path)
-    config.read(login_path)
+    cap_path = os.path.join(parent_dir, file_path)
+    config.read(cap_path)
     ret["package_name"] = config["Driver"]["package_name"]
-    ret["main_activity"] = config["Driver"]["main_activity"]
+    ret["activity"] = config["Driver"]["main_activity"]
     return ret
 
 if __name__ == "__main__":
+    cap = locate_cap()
+    print(cap)
+    log = locate_login()
+    print(log)
     pass

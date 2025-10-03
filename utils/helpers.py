@@ -12,7 +12,7 @@ def log_info(string):
     logging.info(string)
 
 def wait_for_element(driver,time,by,val,required = False) :
-    wait = WebDriverWait(driver,time)
+    wait = WebDriverWait(driver,time,poll_frequency=0.2)
     try:
         button = wait.until(
             EC.element_to_be_clickable((by,val))
@@ -29,9 +29,10 @@ def find_element(driver,byval,val,required = False):
         return button
     except TimeoutException:
         if(required):
-            raise Exception(f"Elements cannot be foind: {byval} {val}")
+            raise Exception(f"Elements cannot be found: {byval} {val}")
         return None
 
 
 def wait(length):
+    logging.info(f"\n waiting for {length} seconds\n")
     time.sleep(length)

@@ -1,11 +1,6 @@
 import unittest
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
-from appium.webdriver.common.appiumby import AppiumBy
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from pages.initial_promo_view import initial_promo_view
 from utils.initial_state_skip import initial_state_skip
 from pages.navbar_view import navbar_view
 from pages.login_page_view import login_page_view
@@ -43,6 +38,7 @@ class TestAppium(unittest.TestCase):
         nav.navigate("myAccount")
         loginPage = login_page_view(self.driver,"android")
         time.sleep(5)
+        loginPage.login()
 
 if __name__ == '__main__':
     unittest.main()
